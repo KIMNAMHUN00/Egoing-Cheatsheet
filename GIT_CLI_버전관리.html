@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>Egoing Cheatsheet</title>
+    <link rel="stylesheet" type='text/css' href="markdown.css">
+    <link rel="stylesheet" type='text/css' href="style.css">
+  </head>
+  <body class='typora-export os-windows'>
+    <header class="exception">
+      <h1 class="exception"><a href="index.html">Egoing Cheatsheet</a></h1>
+      <h3 class="exception"><a href="#">Git CLI 버전관리</a></h3>
+    </header>
+    <div id="grid">
+      <nav>
+        <ul>
+          <li><a href="WEB1-HTML&Internet.html">WEB1-HTML&Internet</a></li>
+          <li><a href="WEB2-CSS.html">WEB2-CSS</a></li>
+          <li><a href="Python&Ruby.html">Python&Ruby</a></li>
+          <li><a href="GitN.html">GitN</a></li>
+          <li><a href="POSIX_CLI1.html">POXIS CLI1</a></li>
+          <li><a href="GIT_CLI_버전관리.html">GIT CLI-버전관리</a></li>
+          <li><a href="GIT_CLI_Branch&Conflict.html">GIT CLI-Branch&Conflict</a></li>
+          <li><a href="GIT_CLI_협업.html">GIT CLI-협업</a></li>
+          <li><a href="DATABASE2-MySQL.html">DATABASE2-MySQL</a></li>
+        </ul>
+      </nav>
+      <section>
+        <div  id='write'  class = 'is-node'><h1><a name="git-cli---버전관리-강의-간단-설명서" class="md-header-anchor"></a><span>GIT CLI - 버전관리 강의 간단 설명서</span></h1><h3><a name="기본" class="md-header-anchor"></a><span>&lt;기본&gt;</span></h3><p><strong><span>Working Tree</span></strong><span> : 버전이 만들어지기 전단계가 있는곳 / 생성, 수정 등을 할 수 있다</span></p><p><strong><span>Staging Area</span></strong><span> : 버전을 만들려고 하는 파일들, 여러가지중에 일부를 하나의 버전으로 만든다</span></p><p><strong><span>Repository</span></strong><span> : 버전을 저장하는 곳 </span></p><p>&nbsp;</p><h6><a name="명령어-모음" class="md-header-anchor"></a><span>&lt;명령어 모음&gt;</span></h6><p><strong><span>git init</span></strong><span> : 현재 디렉토리에서 버전관리를 해라</span></p><p><span>(위에꺼 하면 .git이라는 디렉토리가 생김</span></p><p><span>cd .git으로 들어감</span></p><p><span>ls -al로 보면 여러가지가 생성되있음</span></p><p><span>.git 안에 있는 디렉토리와 파일들이 적절하게 버전관리 도움</span></p><p><span>.git은 저장소)</span></p><p><strong><span>git status</span></strong><span> : </span><em><span>Working Tree</span></em><span>와 </span><em><span>Staging Area</span></em><span>에 있는 파일들의 상태를 보여줌</span></p><p><strong><span>git add &quot;파일이름&quot;</span></strong><span> : </span><em><span>Working Tree</span></em><span>안에 있는 파일을 </span><em><span>Staging Area</span></em><span>에 올림</span></p><p><strong><span>git add &quot;디렉토리 이름&quot;</span></strong><span> : 디렉토리 안에있는 파일을 </span><em><span>Staging Area</span></em><span>에 올림</span></p><p><strong><span>git commit -m &quot;&quot;버전이름&quot;&quot;</span></strong><span>  : ?라는 이름의 파일을 만들어서 </span><em><span>Repository</span></em><span>에 넣어라</span></p><p><strong><span>git log</span></strong><span> : </span><em><span>Repository</span></em><span>에서 버전의 역사를 보여줌</span></p><p><strong><span>git log --stat</span></strong><span> : </span><em><span>Repository</span></em><span>에서 한 버전에 몇개의 파일이 연루되었는가, 몇줄이 추가되었는가를 보여줌</span></p><p><strong><span>git diff</span></strong><span> : </span><em><span>Working Tree</span></em><span>에서 뭐가 추가되었고 뭐가 삭제되었는지를 알려줌</span></p><p><strong><span>git reset --hard</span></strong><span> : </span><em><span>Working Tree</span></em><span>와 </span><em><span>Staging Area</span></em><span>에서 지금까지 작업했던 내용을 삭제하고 이전의 상태로 돌아감</span></p><p><strong><span>git log -p(패치)</span></strong><span> : </span><em><span>Repository</span></em><span>에서 지금까지의 패치노트를 보여준다</span></p><p><strong><span>git checkout &quot;버전코드&quot;</span></strong><span> : 이 버전으로 돌아감</span></p><p><strong><span>git checkout &quot;master&quot;</span></strong><span> : 다시 원래 버전으로 돌아감</span></p><p><strong><span>git add .</span></strong><span> : 모든 파일을 </span><em><span>Staging Area</span></em><span>로 </span></p><p><strong><span>git commit -am &quot;버전이름&quot;</span></strong><span> : add와 commit을 한번에(최초 한번은 add가 되었어야함)</span></p><p><strong><span>git commit</span></strong><span> : 기본 에디터 실행</span></p><p><strong><span>git config --global core.editor &quot;nano&quot;</span></strong><span> : 기본 에디터를 nano로 설정</span></p><p><strong><span>git reset --hard &quot;버전코드&quot;</span></strong><span> : 이 버전으로 리셋함, 버전을 지울뿐 아니라 수정하고 있던것까지 지워버림</span></p><p><strong><span>git reset --soft &quot;버전코드&quot;</span></strong><span> : 이 버전으로 리셋함, 버전을 지우지만 수정하고있던것은 지우지 않음</span></p><p><strong><span>git revert &quot;버전코드&quot;</span></strong><span> : 이 버전을 전 버전으로 되돌림</span></p><p>&nbsp;</p><h6><a name="그-외" class="md-header-anchor"></a><span>&lt;그 외&gt;</span></h6><p><span>디렉토리 : 폴더</span></p><p><span>No commits yet : 아직 버전이 없습니다</span></p><p><span>Untracked files : 추적되지 않고 있는 파일</span></p><p><span>git은 명시적으로 이파일을 버전관리 할거라고 한번 알려줘야한다.</span></p><p><span>아니면 없는 셈</span></p><p><span>q : 나가기</span></p><p><span>최신버전이 master</span></p><p><span>Head가 master를 가리킴: 우리가 master버전에 초점을 맞추고있음</span></p></div>
+      </section>
+    </div>
+    <footer>
+        <p id="mail">Team Hyvy 김남훈 kktree00@gmail.com</p>
+        <p id="fix_date">마지막 수정:2020-01-28</p>
+		</footer>
+  </body>
+</html>
